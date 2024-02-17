@@ -109,10 +109,10 @@ class DevicePreview extends StatefulWidget {
   /// All the default tools included in the menu : [DeviceSection], [SystemSection],
   /// [AccessibilitySection] and [SettingsSection].
   static const List<Widget> defaultTools = <Widget>[
-    DeviceSection(),
-    SystemSection(),
-    AccessibilitySection(),
-    SettingsSection(),
+   // DeviceSection(),
+   //  SystemSection(),
+   //  AccessibilitySection(),
+   //  SettingsSection(),
   ];
 
   @override
@@ -568,20 +568,20 @@ class _DevicePreviewState extends State<DevicePreview> {
                               }),
                             ),
                           ),
-                        if (isToolbarVisible && !isSmall)
-                          Positioned.fill(
-                            key: const Key('Large'),
-                            child: DervicePreviewLargeLayout(
-                              slivers: widget.tools,
-                            ),
-                          ),
+                        // if (isToolbarVisible && !isSmall)
+                        //   Positioned.fill(
+                        //     key: const Key('Large'),
+                        //     child: DervicePreviewLargeLayout(
+                        //       slivers: widget.tools,
+                        //     ),
+                        //   ),
                         AnimatedPositioned(
                           key: const Key('preview'),
                           duration: const Duration(milliseconds: 200),
                           left: 0,
-                          right: isToolbarVisible ? rightPanelOffset : 0,
+                          right: 0,
                           top: 0,
-                          bottom: isToolbarVisible ? bottomPanelOffset : 0,
+                          bottom: 0,
                           child: Theme(
                             data: background,
                             child: Container(
@@ -609,31 +609,31 @@ class _DevicePreviewState extends State<DevicePreview> {
                             ),
                           ),
                         ),
-                        Positioned.fill(
-                          child: IgnorePointer(
-                            ignoring: !_isToolPanelPopOverOpen,
-                            child: Localizations(
-                              locale: const Locale('en', 'US'),
-                              delegates: const [
-                                GlobalMaterialLocalizations.delegate,
-                                GlobalCupertinoLocalizations.delegate,
-                                GlobalWidgetsLocalizations.delegate,
-                              ],
-                              child: Navigator(
-                                onGenerateInitialRoutes: (navigator, name) {
-                                  return [
-                                    MaterialPageRoute(
-                                      builder: (context) => Scaffold(
-                                        key: scaffoldKey,
-                                        backgroundColor: Colors.transparent,
-                                      ),
-                                    ),
-                                  ];
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
+                        // Positioned.fill(
+                        //   child: IgnorePointer(
+                        //     ignoring: !_isToolPanelPopOverOpen,
+                        //     child: Localizations(
+                        //       locale: const Locale('en', 'US'),
+                        //       delegates: const [
+                        //         GlobalMaterialLocalizations.delegate,
+                        //         GlobalCupertinoLocalizations.delegate,
+                        //         GlobalWidgetsLocalizations.delegate,
+                        //       ],
+                        //       child: Navigator(
+                        //         onGenerateInitialRoutes: (navigator, name) {
+                        //           return [
+                        //             MaterialPageRoute(
+                        //               builder: (context) => Scaffold(
+                        //                 key: scaffoldKey,
+                        //                 backgroundColor: Colors.transparent,
+                        //               ),
+                        //             ),
+                        //           ];
+                        //         },
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     );
                   },
