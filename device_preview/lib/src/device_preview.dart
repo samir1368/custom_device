@@ -109,10 +109,17 @@ class DevicePreview extends StatefulWidget {
   /// All the default tools included in the menu : [DeviceSection], [SystemSection],
   /// [AccessibilitySection] and [SettingsSection].
   static const List<Widget> defaultTools = <Widget>[
+<<<<<<< HEAD
     // DeviceSection(),
     //  SystemSection(),
     //  AccessibilitySection(),
     //  SettingsSection(),
+=======
+   // DeviceSection(),
+   //  SystemSection(),
+   //  AccessibilitySection(),
+   //  SettingsSection(),
+>>>>>>> 20d76e4b4cc7aa5ca172235649bc806bbf6653af
   ];
 
   @override
@@ -602,9 +609,15 @@ class _DevicePreviewState extends State<DevicePreview> {
                                   builder: _buildPreview,
                                 )
                                     : Builder(
+<<<<<<< HEAD
                                   key: _appKey,
                                   builder: widget.builder,
                                 ),
+=======
+                                        key: _appKey,
+                                        builder: widget.builder,
+                                      ),
+>>>>>>> 20d76e4b4cc7aa5ca172235649bc806bbf6653af
                               ),
                             ),
                           ),
