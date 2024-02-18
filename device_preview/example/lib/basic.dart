@@ -10,11 +10,9 @@ class BasicApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
+
       builder: DevicePreview.appBuilder,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+
       home: const Home(),
     );
   }
@@ -36,7 +34,9 @@ class Home extends StatelessWidget {
           ...Iterable.generate(
             100,
             (i) => ListTile(
-              title: Text('Tile $i'),
+              title: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Text('Tile $i')),
               onTap: () {},
             ),
           )
