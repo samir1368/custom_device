@@ -446,27 +446,18 @@ class _DevicePreviewState extends State<DevicePreview> {
             device: device,
             isFrameVisible: false,
             orientation: orientation,
-            screen: VirtualKeyboard(
-              isEnabled: isVirtualKeyboardVisible,
-              child: Theme(
-                data: Theme.of(context).copyWith(
-                  platform: device.identifier.platform,
-                  brightness: isDarkMode ? Brightness.dark : Brightness.light,
-                ),
-                child: MediaQuery(
-                  data: DevicePreview._mediaQuery(context),
-                  child: Builder(
-                    key: _appKey,
-                    builder: (context) {
-                      final app = widget.builder(context);
-                      assert(
-                      isWidgetsAppUsingInheritedMediaQuery(app),
-                      'Your widgets app should have its `useInheritedMediaQuery` property set to `true` in order to use DevicePreview.',
-                      );
-                      return app;
-                    },
-                  ),
-                ),
+            screen: MediaQuery(
+              data: DevicePreview._mediaQuery(context),
+              child: Builder(
+                key: _appKey,
+                builder: (context) {
+                  final app = widget.builder(context);
+                  assert(
+                  isWidgetsAppUsingInheritedMediaQuery(app),
+                  'Your widgets app should have its `useInheritedMediaQuery` property set to `true` in order to use DevicePreview.',
+                  );
+                  return app;
+                },
               ),
             ),
           ),
