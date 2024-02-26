@@ -25,22 +25,26 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Basic'),
-      ),
-      body: ListView(
-        children: [
-          ...Iterable.generate(
-            100,
-            (i) => ListTile(
-              title: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Text('Tile $i')),
-              onTap: () {},
-            ),
-          )
-        ],
+    return Container(
+      color: Colors.amber,
+      child: Scaffold(
+       
+        body: Container(
+          color: Colors.amber,
+          child: ListView(
+            children: [
+              ...Iterable.generate(
+                100,
+                (i) => ListTile(
+                  title: Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Text('Tile $i')),
+                  onTap: () {},
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
