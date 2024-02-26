@@ -53,7 +53,7 @@ class DevicePreviewStore extends ChangeNotifier {
     platform: TargetPlatform.android,
     safeAreas: EdgeInsets.only(top: 20),
     rotatedSafeAreas: EdgeInsets.only(top: 20),
-    screenSize: Size(512, 1024),
+    screenSize: Size(412, 892),
     type: DeviceType.tablet,
   );
 

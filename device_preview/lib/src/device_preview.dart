@@ -477,7 +477,7 @@ class _DevicePreviewState extends State<DevicePreview> {
 
     return ChangeNotifierProvider(
       create: (context) => DevicePreviewStore(
-        defaultDevice: widget.defaultDevice ?? Devices.android.samsungGalaxyNote20Ultra,
+        defaultDevice: widget.defaultDevice ?? Devices.android.mediumPhone,
         devices: widget.devices,
         locales: widget.availableLocales,
         storage: storage,
